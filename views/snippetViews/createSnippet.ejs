@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="/css/style.css">
+  <% if (data.role === 'Admin') { %>
+    <%- include('../headers/adminHeader') -%>
+<% } else { %>
+    <%- include('../headers/userHeader') -%>
+    <% } %>
+  <body>
+    <form action="/create-snippet" method="POST">
+        <h1>Create your snippet!</h1>
+      <br>
+      <input type="text" id="snippetname" name="snippetname" placeholder="Name your snippet" required><br><br>
+      <textarea type="text" id="codesnippet" name="codesnippet" placeholder="Write your code here." style="width: 500px; height: 500px;" required></textarea><br><br>
+
+      <input type="submit" value="Add snippet">
+    </form> 
+</body>
+<%- include('../headers/footer') -%>
+</html>

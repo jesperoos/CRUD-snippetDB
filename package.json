@@ -1,0 +1,52 @@
+{
+  "name": "b2-crud",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "htmlhint": "npx htmlhint ./src || exit 0",
+    "stylelint": "npx stylelint \"./src/**/*.css\" || exit 0",
+    "stylelint:fix": "npx stylelint --fix \"./src/**/*.css\" || exit 0",
+    "eslint": "npx eslint . --ext .mjs || exit 0",
+    "eslint:fix": "npx eslint . --ext .mjs --fix || exit 0",
+    "jsdoc": "npx jsdoc -c .jsdoc.json || exit 0",
+    "lint": "npm run htmlhint && npm run stylelint && npm run eslint",
+    "start": "npx nodemon app.mjs",
+    "clean": "rm -rf build/",
+    "clean-all": "npm run clean && rm -rf node_modules/ && rm -f package-lock.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.lnu.se:1dv528/student/jr223eb/b2-crud.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsdoc": "^39.8.0",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "htmlhint": "^1.1.4",
+    "jsdoc": "^4.0.0",
+    "nodemon": "^2.0.20",
+    "stylelint": "^14.16.1",
+    "vite": "^4.1.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.9.1",
+    "morgan": "^1.10.0",
+    "session": "^0.1.0"
+  }
+}

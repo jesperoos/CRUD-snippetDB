@@ -1,0 +1,19 @@
+<% if (data.role === 'Admin') { %>
+    <%- include('headers/adminHeader') -%>
+<% } else { %>
+    <%- include('headers/userHeader') -%>
+    <% } %>
+
+<h1>List users</h1>
+
+<% if (data.users.length == 0) { %>
+    <p>No users exists</p>
+<% } else { %>
+    <ul>
+      <% for (let i = 0; i < data.users.length; i++) { %>
+      <li><%= `${data.users[i].username}` + `\t${data.users[i].password}` + `\t\t${data.users[i].role}` %></li>
+      <% } %>
+      </ul>
+<% } %>
+
+<%- include('headers/footer') -%>

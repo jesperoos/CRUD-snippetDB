@@ -1,0 +1,19 @@
+<html>
+  <%- include('../headers/header') -%>
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
+<h1>List of snippets</h1>
+
+<% if (data.snippets.length == 0) { %>
+    <p></p>
+<% } else { %>
+    <ul>
+      <% for (let i = 0; i < data.snippets.length; i++) { %>
+        <li><div><h2><%= JSON.parse(`${data.snippets[i].name}`) %></h2></div><div><h2>Created by: <%= JSON.parse(`${data.snippets[i].username}`).replaceAll('"', '') %></h2></div>
+          <div class="snippetList"><%= JSON.parse(`${data.snippets[i].codeSnippet}`) %></div></li>
+      <% } %>
+    </ul>
+<% } %>
+
+<%- include('../headers/footer') -%>
+</html>

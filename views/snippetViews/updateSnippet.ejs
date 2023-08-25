@@ -1,0 +1,40 @@
+
+<html>
+  <link rel="stylesheet" href="/css/style.css">
+  <% if (data.role === 'Admin') { %>
+    <%- include('../headers/adminHeader') -%>
+<% } else { %>
+    <%- include('../headers/userHeader') -%>
+    <% } %>
+  <body>
+    <div class="bg" style="max-width: 1000px">
+
+      <div style="float: right">
+        <h1>List of snippets</h1>
+        
+        <% if (data.snippets.length == 0) { %>
+            <p></p>
+        <% } else { %>
+            <ul>
+              <% for (let i = 0; i < data.snippets.length; i++) { %>
+                <li><div><h2><%= JSON.parse(`${data.snippets[i].name}`) %></h2></div><div><h2>Created by: <%= JSON.parse(`${data.snippets[i].username}`).replaceAll('"', '') %></h2></div>
+                  <div class="snippetList"><%= JSON.parse(`${data.snippets[i].codeSnippet}`) %></div></li>
+              <% } %>
+            </ul>
+        <% } %>
+      </div>
+
+      <div style="float:left">
+        <form action="/update-snippet" method="POST">
+            <h1>Update a snippet</h1>
+          <br>
+          <input type="text" id="snippetname" name="snippetname" placeholder="Snippet to update" required><br><br>
+          <textarea type="text" id="codesnippet" name="codesnippet" placeholder="Write your code here." style="width: 500px; height: 500px;" required></textarea><br><br>
+
+          <input type="submit" value="Update">
+        </form> 
+      </div>
+    </div>
+  </body>
+<%- include('../headers/footer') -%>
+</html>

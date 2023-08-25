@@ -1,0 +1,52 @@
+h1 {
+  color: rgb(190, 232, 252);
+}
+
+h2 {
+  color: rgb(230, 219, 206);
+}
+
+li {
+  white-space: pre-wrap;
+  color: aqua;
+}
+
+body {
+  background-image: url('../img/backgorund.jpg');
+}
+
+nav {
+  margin-top: 2%;
+  text-align: center;
+  font-size: x-large;
+  font-weight: 900;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.snippetlist {
+  color: yellow;
+  border-style: solid;
+  border-color: black;
+  min-width: 200px;
+  min-height: 200px;
+  width: fit-content;
+  background-color: rgb(99, 96, 94);
+}
+
+a {
+  color: rgb(206, 206, 183);
+}
+
+a:hover {
+  /* color: darkgoldenrod; */
+  color: orange;
+}
+
+textarea {
+  background-color: bisque;
+}
+
+input {
+  background-color: bisque;
+}
+
